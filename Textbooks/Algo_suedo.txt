@@ -1,0 +1,111 @@
+MERGE SORT PSEUDO O(nlogn)
+mergesort(low,high){
+if low == high return
+
+mid = (low + high)/2
+mergesort(low, mid)
+mergesort(mid+1, high)
+merge(low, mid, high)
+}
+
+-------------------------------------------------------
+QUICK SORT PSEUDO average O(nlogn), worst O(n^2)
+quicksort(low, high){
+if low < high
+    j = partition(low,high)
+    quicksort(low, j)
+    quicksort(j+1, high)
+}
+
+-------------------------------------------------------
+BINARY SEARCH PSEUDO, key to find = x THETA(logn), average and worst are the same
+binarysearch(low, high){
+if low > high return 0
+else
+    mid = (low + high)/2
+    if x == a[mid] return mid
+    else if x < a[mid] return binarysearch(low, mid)
+    else return binarysearch(mid+1, high)
+}
+-------------------------------------------------------
+kth SELECTION PSEUDO, k = smallest key O(n^2)
+selection(low, high, k){
+if low == high return a[low]
+else
+partition(low, high, pivot)
+if k == pivot return a[pivot]
+else if k < pivot return selection(low, pivot-1, k)
+else return selection(pivot+1, high, k)
+
+}
+
+-------------------------------------------------------
+O(n) definition
+f(n) is O(g(n)) iff there exists non zero positive constants c and n0 such that f(n) <= cg(n) for all n >= n0
+
+OMEGA(n) definition
+f(n) is OMEGA(g(n)) iff there exists non zero positive constants c and n0 such that f(n) >= c(g(n)) for all n >= n0
+
+THETA(n) definition
+f(n) is THETA(g(n)) iff both f(n) = O(g(n)) and f(n) = OMEGA(g(n))
+
+little O definition
+f(n) = o(g(n)) iff f(n) = O(g(n)) but not f(n) = THETA(g(n))
+
+little omega definition
+f(n) = omega(g(n)) iff f(n) = OMEGA(g(n)) but not f(n) = THETA(g(n))
+
+Limit theorems 
+lim n->infinity of f(n)/g(n) = 0     implies that f(n) = O(g(n)
+
+lim n->infinity of f(n)/g(n) = infinity implies that f(n) = OMEGA(g(n))
+
+lim n->infinity of f(n)/g(n) = c     implies that f(n) = THETA(g(n))
+
+-------------------------------------------------------
+
+GREEDY META ALGO
+
+greedy(a, n){
+solution = null
+
+for i=1, i<=n, i++{
+    x = choose(a)
+    if feasible(solution, x)
+        solution = union(solution, x)
+}
+return solution
+
+}
+
+objective function definition
+a function that describes a cost or gain to be optimized
+
+constraint definition
+a limit placed on an objective function
+
+feasible solution
+any solution that satisfies the constraints
+
+optimal solution
+a feasible solution that optimizes the objective function
+
+
+GREEDY KNAPSACK DEFINITION
+
+the greedy knapsack problem is where a knapsack has a certain weight capacity that it can carry, and there are items in a list with profits and weights associated with them, the ratio of profit/weight is considered and the most profitable items are placed into the knapsack until the weight limit is reached, thus maximizing the profit using the given weight
+
+GREEDY KNAPSACK PSEUDO
+O(nlogn)
+greedyknap(capacity, profits, weights, size, x){ x is the list of items to be added to the sack
+for i=1, i<=n, i++ {x[i] = 0}
+
+U = capacity
+
+for i=1, i<=n, i++{
+    if w[i] > U break
+    x[i] = 1
+    U -= w[i]
+}
+if i<=n x[i] = U/w[i]
+}
