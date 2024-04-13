@@ -1,0 +1,43 @@
+Script started on 2024-04-01 12:19:51-04:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="90" LINES="17"]
+[?2004h]0;alex@Alexander: ~/CS4310 - Algorithms/Assignment 4[01;32malex@Alexander[00m:[01;34m~/CS4310 - Algorithms/Assignment 4[00m$ /bin/python3 "/home/alex/CS4310 - Algorithms/Assignment 4/TSP.py"
+[?2004l
+Cost Adjacency Matrix:
+[0, 10, 15, 20]
+[5, 0, 9, 10]
+[6, 13, 0, 12]
+[8, 8, 9, 0]
+
+Minimum Cost: 35
+
+Associated Tour (0 = Starting node): [0, 1, 3, 2, 0]
+
+g-functions:
+[15, 10, 15, 20]
+[5, 15, 9, 10]
+[6, 13, 21, 12]
+[8, 8, 9, 18]
+
+Execution Time: 65497 nano-seconds
+Waiting for 5 seconds to run for new example...
+
+Cost Adjacency Matrix:
+[0, 5, 1, 3]
+[7, 0, 3, 4]
+[6, 13, 0, 10]
+[9, 18, 12, 0]
+
+Minimum Cost: 27
+
+Associated Tour (0 = Starting node): [0, 1, 2, 3, 0]
+
+g-functions:
+[7, 5, 1, 3]
+[7, 12, 3, 4]
+[6, 11, 7, 9]
+[9, 14, 10, 12]
+
+Execution Time: 103280 nano-seconds
+[?2004h]0;alex@Alexander: ~/CS4310 - Algorithms/Assignment 4[01;32malex@Alexander[00m:[01;34m~/CS4310 - Algorithms/Assignment 4[00m$ exit
+[?2004lexit
+
+Script done on 2024-04-01 12:20:00-04:00 [COMMAND_EXIT_CODE="0"]
